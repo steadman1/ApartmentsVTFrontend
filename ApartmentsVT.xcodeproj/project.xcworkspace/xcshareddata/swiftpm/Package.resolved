@@ -1,0 +1,15 @@
+{
+  "originHash" : "0b06d3f9b5b37cab5c34ae22626a8d61fd2558ecf29998e8f4f30e42fd76d690",
+  "pins" : [
+    {
+      "identity" : "steadmanui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/steadman1/steadmanui",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a925140b29a0470a8f9ebab29ad35e2c44e53024"
+      }
+    }
+  ],
+  "version" : 3
+}

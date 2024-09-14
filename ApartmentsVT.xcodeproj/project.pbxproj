@@ -11,6 +11,8 @@
 		0886F82F2C95C66700867834 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0886F82E2C95C66700867834 /* ContentView.swift */; };
 		0886F8332C95C66900867834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0886F8322C95C66900867834 /* Assets.xcassets */; };
 		0886F8362C95C66900867834 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0886F8352C95C66900867834 /* Preview Assets.xcassets */; };
+		0886F83D2C96235C00867834 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0886F83C2C96235C00867834 /* NavigationBar.swift */; };
+		0886F8402C96238000867834 /* SteadmanUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0886F83F2C96238000867834 /* SteadmanUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		0886F82E2C95C66700867834 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0886F8322C95C66900867834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0886F8352C95C66900867834 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0886F83C2C96235C00867834 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0886F8402C96238000867834 /* SteadmanUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +55,12 @@
 		0886F82B2C95C66700867834 /* ApartmentsVT */ = {
 			isa = PBXGroup;
 			children = (
+				0886F8412C96239100867834 /* Navigation Views */,
 				0886F82C2C95C66700867834 /* ApartmentsVTApp.swift */,
 				0886F82E2C95C66700867834 /* ContentView.swift */,
 				0886F8322C95C66900867834 /* Assets.xcassets */,
 				0886F8342C95C66900867834 /* Preview Content */,
+				0886F83C2C96235C00867834 /* NavigationBar.swift */,
 			);
 			path = ApartmentsVT;
 			sourceTree = "<group>";
@@ -65,6 +71,13 @@
 				0886F8352C95C66900867834 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0886F8412C96239100867834 /* Navigation Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Navigation Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +96,9 @@
 			dependencies = (
 			);
 			name = ApartmentsVT;
+			packageProductDependencies = (
+				0886F83F2C96238000867834 /* SteadmanUI */,
+			);
 			productName = ApartmentsVT;
 			productReference = 0886F8292C95C66700867834 /* ApartmentsVT.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 0886F8202C95C66700867834;
+			packageReferences = (
+				0886F83E2C96238000867834 /* XCRemoteSwiftPackageReference "steadmanui" */,
+			);
 			productRefGroup = 0886F82A2C95C66700867834 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +158,7 @@
 			files = (
 				0886F82F2C95C66700867834 /* ContentView.swift in Sources */,
 				0886F82D2C95C66700867834 /* ApartmentsVTApp.swift in Sources */,
+				0886F83D2C96235C00867834 /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0886F83E2C96238000867834 /* XCRemoteSwiftPackageReference "steadmanui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/steadman1/steadmanui";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0886F83F2C96238000867834 /* SteadmanUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0886F83E2C96238000867834 /* XCRemoteSwiftPackageReference "steadmanui" */;
+			productName = SteadmanUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0886F8212C95C66700867834 /* Project object */;
 }
