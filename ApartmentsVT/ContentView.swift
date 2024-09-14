@@ -7,13 +7,33 @@
 
 import SwiftUI
 import SwiftData
+import SteadmanUI
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-
+    @EnvironmentObject var defaults: ObservableDefaults
+    @EnvironmentObject var screen: Screen
+    
+    let navigationItems = [
+        NavigationItem(name: "Discover",
+                       from: Image(.compass),
+                       to: Image(.compassFill)),
+        NavigationItem(name: "Search",
+                       from: Image(.magnifyingglass),
+                       to: Image(.magnifyingglassFill)),
+        NavigationItem(name: "Messages",
+                       from: Image(.envelope),
+                       to: Image(.envelopeFill)),
+        NavigationItem(name: "Profile",
+                       from: Image(.person),
+                       to: Image(.personFill)),
+    ]
+    
     var body: some View {
-        VStack {
-            Text("hello world")
+        CustomNavigationBar(items: navigationItems) {
+            DiscoverPage()
+//            SearchView()
+//            MessagesPage()
+//            ProfilePage()
         }
     }
 }

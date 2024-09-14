@@ -7,9 +7,12 @@
 
 import SwiftUI
 import SwiftData
+import SteadmanUI
 
 @main
 struct ApartmentsVTApp: App {
+    @ObservedObject var defaults = ObservableDefaults.shared
+    @ObservedObject var screen = Screen.shared
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             
@@ -25,8 +28,25 @@ struct ApartmentsVTApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GeometryReader { geometry in
+                NavigationStack {
+                    ContentView()
+                        .environmentObject(screen)
+                        .environmentObject(defaults)
+                        .onAppear {
+                            screen.width = geometry.size.width
+                            screen.height = geometry.size.height
+                            screen.safeAreaInsets = geometry.safeAreaInsets
+                            screen.initialSafeAreaInsets = geometry.safeAreaInsets
+                        }.onChange(of: geometry.size) { _, newValue in
+                            screen.width = geometry.size.width
+                            screen.height = geometry.size.height
+                            screen.safeAreaInsets = geometry.safeAreaInsets
+                        }
+                }
+            }
         }
         .modelContainer(sharedModelContainer)
     }
 }
+
