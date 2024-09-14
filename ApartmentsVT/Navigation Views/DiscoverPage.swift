@@ -19,14 +19,14 @@ struct DiscoverPage: View {
         ZStack(alignment: .top) {
             ScrollView {
                 VStack {
-                    ForEach(0..<100) { index in
-                        Text("hi \(index)")
-                    }
+                    RecommendedListings(type: .nearCampus)
+                    RecommendedListings(type: .nearGroceries)
                 }.padding(.top, discoverTopBarHeight + topInset - Screen.padding * 2)
                     .frame(maxWidth: .infinity)
             }
             DiscoverTopBar(topInset: topInset, height: discoverTopBarHeight)
         }.frame(height: screen.height)
+            .background(Color.background)
             .ignoresSafeArea()
     }
 }

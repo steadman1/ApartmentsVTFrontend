@@ -83,7 +83,7 @@ class User: Codable {
         password: "securepassword123",
         bio: "I am a student at VT, and I love tech and real estate.",
         nationality: "American",
-        profilePictureURL: URL(string: "https://example.com/profile/johnDoe.png"),
+        profilePictureURL: URL(string: "https://i.scdn.co/image/ab67757000003b822342efa65059b2f606d0ee03"),
         userListings: Listing.sampleListings,
         favoriteListings: Listing.favoriteListings
     )

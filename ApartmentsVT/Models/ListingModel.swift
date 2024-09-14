@@ -15,6 +15,7 @@ class Listing: Codable {
     var title: String
     var apartmentComplexName: String
     var price: Int
+    var period: String
     var roommateCount: Int
     var summary: String
     var roommateBio: String
@@ -53,6 +54,7 @@ class Listing: Codable {
          title: String,
          apartmentComplexName: String,
          price: Int,
+         period: String,
          roommateCount: Int,
          summary: String,
          roommateBio: String,
@@ -91,6 +93,7 @@ class Listing: Codable {
         self.title = title
         self.apartmentComplexName = apartmentComplexName
         self.price = price
+        self.period = period
         self.roommateCount = roommateCount
         self.summary = summary
         self.roommateBio = roommateBio
@@ -156,6 +159,7 @@ class Listing: Codable {
             title: "Spacious 2 Bed Apartment near Campus",
             apartmentComplexName: "Campus Heights",
             price: 1200,
+            period: "month",
             roommateCount: 1,
             summary: "A great 2-bedroom apartment close to campus with lots of amenities.",
             roommateBio: "Friendly roommate studying Computer Science at VT.",
@@ -183,7 +187,7 @@ class Listing: Codable {
             postPublishedDate: Date(),
             depositRequired: 500,
             leaseType: "Full Lease",
-            imagesURLs: [URL(string: "https://example.com/images/apartment1.png")!],
+            imagesURLs: [URL(string: "https://i0.wp.com/www.bsbdesign.com/wp-content/uploads/2023/06/Greystar_UnionBlacksburg_Bldg1Streetscape1.2.jpg?w=2000&ssl=1")!],
             urlToListing: "https://example.com/listings/apartment1",
             smokingAllowed: false,
             parkingAvailable: true,
@@ -194,7 +198,8 @@ class Listing: Codable {
             userID: 123,
             title: "3 Bed House with Huge Backyard",
             apartmentComplexName: "",
-            price: 1500,
+            price: 600,
+            period: "week",
             roommateCount: 2,
             summary: "A lovely house with a big backyard and close to campus.",
             roommateBio: "Two roommates who love hiking and gaming.",
@@ -222,7 +227,7 @@ class Listing: Codable {
             postPublishedDate: Date(),
             depositRequired: 600,
             leaseType: "Sublease",
-            imagesURLs: [URL(string: "https://example.com/images/house1.png")!],
+            imagesURLs: [URL(string: "https://i0.wp.com/www.bsbdesign.com/wp-content/uploads/2023/06/Greystar_UnionBlacksburg_Bldg1Streetscape1.2.jpg?w=2000&ssl=1")!],
             urlToListing: "https://example.com/listings/house1",
             smokingAllowed: false,
             parkingAvailable: true,
@@ -237,6 +242,7 @@ class Listing: Codable {
             title: "Cozy 1 Bed Apartment with Stunning Views",
             apartmentComplexName: "The Vista",
             price: 900,
+            period: "month",
             roommateCount: 0,
             summary: "A cozy 1-bedroom apartment with great views of the mountains.",
             roommateBio: "",
@@ -264,7 +270,7 @@ class Listing: Codable {
             postPublishedDate: Date(),
             depositRequired: 400,
             leaseType: "Full Lease",
-            imagesURLs: [URL(string: "https://example.com/images/vista1.png")!],
+            imagesURLs: [URL(string: "https://i0.wp.com/www.bsbdesign.com/wp-content/uploads/2023/06/Greystar_UnionBlacksburg_Bldg1Streetscape1.2.jpg?w=2000&ssl=1")!],
             urlToListing: "https://example.com/listings/vista1",
             smokingAllowed: false,
             parkingAvailable: true,

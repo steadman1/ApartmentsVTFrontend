@@ -44,6 +44,10 @@ struct DiscoverTopBar: View {
                             .font(.subheading)
                             .foregroundStyle(Color.glassText)
                     }
+                    
+                    Spacer()
+                    
+                    UserProfileContainer(user: User.sampleUser)
                 }
                 
                 Spacer()

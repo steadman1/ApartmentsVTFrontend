@@ -25,6 +25,10 @@ extension Font {
         Font.custom("Manrope", size: 16)
             .weight(.medium)
     }
+    static var cardTitle: Font {
+        Font.custom("Inter", size: 20)
+            .weight(.bold)
+    }
     static var heading: Font {
         Font.custom("Inter", size: 16)
             .weight(.semibold)
@@ -38,15 +42,15 @@ extension Font {
             .weight(.bold)
     }
     static var headingIcon: Font {
-        Font.system(size: 20)
+        Font.system(size: 32)
             .weight(.bold)
     }
     static var subheadingIcon: Font {
-        Font.system(size: 12)
+        Font.system(size: 24)
             .weight(.bold)
     }
     static var detailIcon: Font {
-        Font.system(size: 16)
+        Font.system(size: 28)
             .weight(.bold)
     }
 }
