@@ -11,7 +11,7 @@ import Foundation
 
 class Listing: Codable {
     var id: Int
-    var userID: String // Reference to the user's UUID
+    var userID: Int
     var title: String
     var apartmentComplexName: String
     var price: Int
@@ -48,8 +48,8 @@ class Listing: Codable {
     var parkingAvailable: Bool
     var customFields: [String: String]
     
-    init(id: String,
-         userID: String,
+    init(id: Int,
+         userID: Int,
          title: String,
          apartmentComplexName: String,
          price: Int,
@@ -86,8 +86,8 @@ class Listing: Codable {
          parkingAvailable: Bool,
          customFields: [String: String]) {
         
-        self.uuid = uuid
-        self.userUUID = userUUID
+        self.id = id
+        self.userID = userID
         self.title = title
         self.apartmentComplexName = apartmentComplexName
         self.price = price
@@ -151,8 +151,8 @@ class Listing: Codable {
     
     static let sampleListings: [Listing] = [
         Listing(
-            uuid: "listing-uuid-1",
-            userUUID: "user-uuid-123",
+            id: 1,
+            userID: 123,
             title: "Spacious 2 Bed Apartment near Campus",
             apartmentComplexName: "Campus Heights",
             price: 1200,
@@ -190,8 +190,8 @@ class Listing: Codable {
             customFields: ["Pool": "Yes", "Gym": "Yes"]
         ),
         Listing(
-            uuid: "listing-uuid-2",
-            userUUID: "user-uuid-123",
+            id: 2,
+            userID: 123,
             title: "3 Bed House with Huge Backyard",
             apartmentComplexName: "",
             price: 1500,
@@ -232,8 +232,8 @@ class Listing: Codable {
     
     static let favoriteListings: [Listing] = [
         Listing(
-            uuid: "listing-uuid-3",
-            userUUID: "user-uuid-123",
+            id: 3,
+            userID: 123,
             title: "Cozy 1 Bed Apartment with Stunning Views",
             apartmentComplexName: "The Vista",
             price: 900,

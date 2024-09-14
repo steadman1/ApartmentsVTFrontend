@@ -10,7 +10,7 @@ import Foundation
 // MARK: - User Model
 
 class User: Codable {
-    var uuid: String
+    var id: Int
     var username: String
     var firstName: String
     var lastName: String
@@ -23,7 +23,7 @@ class User: Codable {
     var userListings: [Listing]
     var favoriteListings: [Listing]
     
-    init(uuid: String,
+    init(id: Int,
          username: String,
          firstName: String,
          lastName: String,
@@ -35,7 +35,7 @@ class User: Codable {
          profilePictureURL: URL? = nil,
          userListings: [Listing] = [],
          favoriteListings: [Listing] = []) {
-        self.uuid = uuid
+        self.id = id
         self.username = username
         self.firstName = firstName
         self.lastName = lastName
@@ -74,7 +74,7 @@ class User: Codable {
     }
     
     static let sampleUser = User(
-        uuid: "user-uuid-123",
+        id: 123,
         username: "johnDoe123",
         firstName: "John",
         lastName: "Doe",
