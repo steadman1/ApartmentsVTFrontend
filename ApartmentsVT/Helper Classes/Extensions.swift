@@ -42,15 +42,15 @@ extension Font {
             .weight(.bold)
     }
     static var headingIcon: Font {
-        Font.system(size: 32)
+        Font.system(size: 1)
             .weight(.bold)
     }
     static var subheadingIcon: Font {
-        Font.system(size: 24)
+        Font.system(size: 12)
             .weight(.bold)
     }
     static var detailIcon: Font {
-        Font.system(size: 28)
+        Font.system(size: 16)
             .weight(.bold)
     }
 }
