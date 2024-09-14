@@ -11,12 +11,23 @@ import SteadmanUI
 
 struct DiscoverPage: View {
     @EnvironmentObject var screen: Screen
+    
+    let discoverTopBarHeight: CGFloat = 260
+    
     var body: some View {
-        VStack {
-            DiscoverTopBar()
-            Text("hi")
-        }.frame(maxWidth: .infinity)
-            .frame(height: screen.height)
+        let topInset: CGFloat = screen.safeAreaInsets.top + Screen.padding * 3
+        ZStack(alignment: .top) {
+            ScrollView {
+                VStack {
+                    ForEach(0..<100) { index in
+                        Text("hi \(index)")
+                    }
+                }.padding(.top, discoverTopBarHeight + topInset - Screen.padding * 2)
+                    .frame(maxWidth: .infinity)
+            }
+            DiscoverTopBar(topInset: topInset, height: discoverTopBarHeight)
+        }.frame(height: screen.height)
+            .ignoresSafeArea()
     }
 }
 

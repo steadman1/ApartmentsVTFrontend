@@ -72,4 +72,19 @@ class User: Codable {
             return nil
         }
     }
+    
+    static let sampleUser = User(
+        uuid: "user-uuid-123",
+        username: "johnDoe123",
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.doe@example.com",
+        phoneNumber: "555-1234",
+        password: "securepassword123",
+        bio: "I am a student at VT, and I love tech and real estate.",
+        nationality: "American",
+        profilePictureURL: URL(string: "https://example.com/profile/johnDoe.png"),
+        userListings: Listing.sampleListings,
+        favoriteListings: Listing.favoriteListings
+    )
 }

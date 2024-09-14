@@ -23,7 +23,7 @@ extension Font {
     }
     static var subtitle: Font {
         Font.custom("Manrope", size: 16)
-            .weight(.bold)
+            .weight(.medium)
     }
     static var heading: Font {
         Font.custom("Inter", size: 16)
@@ -31,7 +31,7 @@ extension Font {
     }
     static var subheading: Font {
         Font.custom("Inter", size: 10)
-            .weight(.bold)
+            .weight(.medium)
     }
     static var detail: Font {
         Font.custom("Inter", size: 12)

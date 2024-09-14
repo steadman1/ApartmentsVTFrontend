@@ -31,9 +31,13 @@ struct ContentView: View {
     var body: some View {
         CustomNavigationBar(items: navigationItems) {
             DiscoverPage()
-//            SearchView()
-//            MessagesPage()
-//            ProfilePage()
+                .frame(maxWidth: screen.width)
+            SearchView()
+                .frame(maxWidth: screen.width)
+            MessagesPage()
+                .frame(maxWidth: screen.width)
+            ProfilePage()
+                .frame(maxWidth: screen.width)
         }
     }
 }
