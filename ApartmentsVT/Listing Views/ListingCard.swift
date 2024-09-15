@@ -102,17 +102,17 @@ struct ComplianceButton: View {
                 case .outline:
                     ZStack {
                         Image(systemName: complianceType.icon)
-                            .font(.subheadingIcon)
+                            .font(.detailIcon)
                             .foregroundStyle(Color.primaryText)
                         
-                    }.frame(width: 40, height: 40)
+                    }.frame(width: 30, height: 30)
                         .clipShape(Circle())
                         .overlay(
                             Circle().stroke(Color.primaryText, lineWidth: 2)
                         )
                 }
                 Circle()
-                    .frame(width: 14, height: 14)
+                    .frame(width: uiDesignType == .outline ? 10 : 14, height: uiDesignType == .outline ? 10 : 14)
                     .foregroundStyle(value ? .successLight : .failureLight)
                     .overlay(
                         Circle().stroke(value ? .successHeavy : .failureHeavy, lineWidth: 2)

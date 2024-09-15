@@ -38,6 +38,10 @@ struct ContentView: View {
                 .frame(maxWidth: screen.width)
             ProfilePage()
                 .frame(maxWidth: screen.width)
+        }.onAppear {
+            guard let infoDictionary: [String: Any] = Bundle.main.infoDictionary else { return }
+            guard let backendHostAddress: String = infoDictionary["BackendHostName"] as? String else { return }
+            defaults.host = backendHostAddress
         }
     }
 }

@@ -25,7 +25,7 @@ struct OutlineShape: ViewModifier {
 
 extension View {
     // Convenience function to apply GlassShape
-    func outlineEffect(cornerRadius: CGFloat = 100, strokeColor: Color = .primaryText, lineWidth: CGFloat = 1) -> some View {
+    func outlineEffect(cornerRadius: CGFloat = 100, strokeColor: Color = .primaryText, lineWidth: CGFloat = 2) -> some View {
         self.modifier(OutlineShape(cornerRadius: cornerRadius, strokeColor: strokeColor, lineWidth: lineWidth))
     }
 }

@@ -201,7 +201,7 @@ class Listing: Codable {
             id: 2,
             userID: 123,
             title: "3 Bed House with Huge Backyard",
-            apartmentComplexName: "",
+            apartmentComplexName: "Union Blacksburg",
             price: 600,
             period: "week",
             roommateCount: 2,
@@ -283,5 +283,15 @@ class Listing: Codable {
             customFields: ["View": "Mountain"]
         )
     ]
+    
+    func getListings() {
+        let host = ObservableDefaults.shared.host
+        
+    }
+    
+    func getListings() {
+        let host = ObservableDefaults.shared.host
+        
+    }
 }
 

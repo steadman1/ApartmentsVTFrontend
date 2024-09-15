@@ -4,16 +4,16 @@ import SteadmanUI
 struct SearchBar: View {
     @FocusState private var textFieldFocus: Bool // Manages the focus of the TextEditor
     
+    @Binding var listings: [Listing]
+    
+    @Binding var searchQuery: String
     @State private var isLoading = false
     @State private var textEditorHeight: CGFloat = 36
-    @State private var searchQuery: String = "" // Search query state
     @State private var textFieldFocusAnimator = false // Animation state for focus
     
     let isEditing: Bool // Determines if editing should be toggled when appearing
     
     let clear: Color = Color.white.opacity(0.000001)
-    
-    
     
     var body: some View {
         VStack {
@@ -43,8 +43,10 @@ struct SearchBar: View {
                                     Text("Smart Search")
                                         .font(.subtitle)
                                         .fontWeight(.semibold)
+                                        .foregroundStyle(Color.primaryText)
                                     Text("Search for listings with natural language.")
                                         .font(.detail)
+                                        .foregroundStyle(Color.primaryText)
                                 }
                             }
                         }.onPreferenceChange(ViewHeightKey.self) { textEditorHeight = $0 }
@@ -57,6 +59,18 @@ struct SearchBar: View {
                         .padding(.horizontal, Screen.padding)
                     
                     HStack {
+                        if (!searchQuery.isEmpty) {
+                            ZStack {
+                                Text("Submit to show results for \(searchQuery)")
+                                    .font(.detail)
+                                    .foregroundStyle(Color.primaryText)
+                            }.padding(.vertical, Screen.halfPadding + 1.5)
+                                .padding(.horizontal, Screen.padding + 1.5)
+                                .background(Color.middleground)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .shadow(color: .black.opacity(0.08), radius: 10)
+                        }
+                        Spacer()
                         Button {
                             isLoading.toggle()
                         } label: {
@@ -81,8 +95,8 @@ struct SearchBar: View {
                         }.disabled(searchQuery.isEmpty || isLoading)
                             .opacity(searchQuery.isEmpty ? 0 : 1)
                             .animation(.navigationItemBounce, value: searchQuery.isEmpty)
-                            .padding(.trailing, Screen.padding)
-                    }
+                            
+                    }.padding(.horizontal, Screen.padding)
                 }
             }
         }

@@ -12,15 +12,15 @@ import UIKit
 class ObservableDefaults: ObservableObject {
     static var shared = ObservableDefaults()
     
-    @Published var sp_dc: String? {
+    @Published var host: String? {
         didSet {
-            UserDefaults.standard.set(self.sp_dc, forKey: ObservableDefaults.sp_dcRoute)
+            UserDefaults.standard.set(self.host, forKey: ObservableDefaults.hostRoute)
         }
     }
 
     init() {
-        self.sp_dc = UserDefaults.standard.string(forKey: ObservableDefaults.sp_dcRoute)
+        self.host = UserDefaults.standard.string(forKey: ObservableDefaults.hostRoute)
     }
     
-    static let sp_dcRoute = "sp_dc"
+    static let hostRoute = "host"
 }
