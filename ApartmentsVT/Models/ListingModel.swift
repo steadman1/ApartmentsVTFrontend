@@ -289,9 +289,9 @@ class Listing: Codable {
         
     }
     
-    func getListings() {
-        let host = ObservableDefaults.shared.host
-        
-    }
+//    func getListings() {
+//        let host = ObservableDefaults.shared.host
+//        
+//    }
 }
 
