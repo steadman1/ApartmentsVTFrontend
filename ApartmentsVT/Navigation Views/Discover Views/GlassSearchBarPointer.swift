@@ -14,23 +14,27 @@ struct GlassSearchBarPointer: View {
     @EnvironmentObject var screen: Screen
     
     var body: some View {
-        ZStack(alignment: .leading) {
-            HStack {
-                Image(.magnifyingglass)
-                    .font(.icon)
-                    .foregroundStyle(Color.glassText)
-                VStack(alignment: .leading) {
-                    Text("Smart Search")
-                        .font(.heading)
+        Button {
+            NavigationBar.shared.selectionIndex = 1
+        } label: {
+            ZStack(alignment: .leading) {
+                HStack {
+                    Image(.magnifyingglass)
+                        .font(.icon)
                         .foregroundStyle(Color.glassText)
-                    Text("Get AI Curated listings. Just for you.")
-                        .font(.subheading)
-                        .foregroundStyle(Color.glassText)
-                }
-                Spacer()
-            }.padding(.horizontal, Screen.padding)
-        }.frame(height: 64)
-            .frame(maxWidth: .infinity)
-            .glassEffect(cornerRadius: 100)
+                    VStack(alignment: .leading) {
+                        Text("Smart Search")
+                            .font(.heading)
+                            .foregroundStyle(Color.glassText)
+                        Text("Get AI Curated listings. Just for you.")
+                            .font(.subheading)
+                            .foregroundStyle(Color.glassText)
+                    }
+                    Spacer()
+                }.padding(.horizontal, Screen.padding)
+            }.frame(height: 64)
+                .frame(maxWidth: .infinity)
+                .glassEffect(cornerRadius: 100)
+        }
     }
 }

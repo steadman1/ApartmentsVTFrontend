@@ -23,7 +23,7 @@ class Listing: Codable {
     var propertyType: String
     var latitude: Float
     var longitude: Float
-    var milesToCampus: Int
+    var milesToCampus: Double
     var walkTime: Int
     var bikeTime: Int
     var busRoutesCount: Int
@@ -63,7 +63,7 @@ class Listing: Codable {
          propertyType: String,
          latitude: Float,
          longitude: Float,
-         milesToCampus: Int,
+         milesToCampus: Double,
          walkTime: Int,
          bikeTime: Int,
          busRoutesCount: Int,
@@ -103,6 +103,7 @@ class Listing: Codable {
         self.propertyType = propertyType
         self.latitude = latitude
         self.longitude = longitude
+        self.milesToCampus = milesToCampus
         self.walkTime = walkTime
         self.bikeTime = bikeTime
         self.busRoutesCount = busRoutesCount

@@ -18,9 +18,10 @@ struct DiscoverPage: View {
         let topInset: CGFloat = screen.safeAreaInsets.top + Screen.padding * 3
         ZStack(alignment: .top) {
             ScrollView {
-                VStack {
+                VStack(spacing: Screen.padding * 2) {
                     RecommendedListings(type: .nearCampus)
                     RecommendedListings(type: .nearGroceries)
+                    Spacer().frame(height: Screen.padding * 2)
                 }.padding(.top, discoverTopBarHeight + topInset - Screen.padding * 2)
                     .frame(maxWidth: .infinity)
             }
