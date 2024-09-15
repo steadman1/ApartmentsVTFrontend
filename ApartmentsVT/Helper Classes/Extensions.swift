@@ -39,7 +39,7 @@ extension Font {
     }
     static var detail: Font {
         Font.custom("Inter", size: 12)
-            .weight(.bold)
+            .weight(.medium)
     }
     static var headingIcon: Font {
         Font.system(size: 24)

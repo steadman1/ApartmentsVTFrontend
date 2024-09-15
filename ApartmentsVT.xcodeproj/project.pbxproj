@@ -33,6 +33,7 @@
 		0893D88C2C9647FD00D17809 /* UserProfileContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D88B2C9647FD00D17809 /* UserProfileContainer.swift */; };
 		0893D88F2C96645800D17809 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D88E2C96645800D17809 /* SearchBar.swift */; };
 		0893D8912C96666A00D17809 /* DismissingKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8902C96666A00D17809 /* DismissingKeyboardButton.swift */; };
+		0893D8932C966A7100D17809 /* OutlineShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8922C966A7100D17809 /* OutlineShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		0893D88B2C9647FD00D17809 /* UserProfileContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileContainer.swift; sourceTree = "<group>"; };
 		0893D88E2C96645800D17809 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		0893D8902C96666A00D17809 /* DismissingKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardButton.swift; sourceTree = "<group>"; };
+		0893D8922C966A7100D17809 /* OutlineShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				0886F83C2C96235C00867834 /* NavigationBar.swift */,
 				0893D8892C96430500D17809 /* GlassShape.swift */,
+				0893D8922C966A7100D17809 /* OutlineShape.swift */,
 				0893D88B2C9647FD00D17809 /* UserProfileContainer.swift */,
 				0893D8902C96666A00D17809 /* DismissingKeyboardButton.swift */,
 			);
@@ -282,6 +285,7 @@
 				0893D87F2C9639E300D17809 /* ListingCard.swift in Sources */,
 				0893D87D2C9639D400D17809 /* ListingInline.swift in Sources */,
 				0886F8432C96261000867834 /* DiscoverPage.swift in Sources */,
+				0893D8932C966A7100D17809 /* OutlineShape.swift in Sources */,
 				0886F8472C96262500867834 /* MessagesPage.swift in Sources */,
 				0893D88C2C9647FD00D17809 /* UserProfileContainer.swift in Sources */,
 				0886F82F2C95C66700867834 /* ContentView.swift in Sources */,

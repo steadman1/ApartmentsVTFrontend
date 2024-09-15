@@ -10,31 +10,25 @@ import SwiftUI
 import SteadmanUI
 
 struct SearchView: View {
+    @EnvironmentObject var screen: Screen
+    @EnvironmentObject var defaults: ObservableDefaults
+    
     var body: some View {
-        VStack {
-            Button {
-                NavigationBar.shared.selectionIndex = 1
-            } label: {
-                ZStack(alignment: .leading) {
-                    HStack {
-                        Image(.magnifyingglass)
-                            .font(.icon)
-                            .foregroundStyle(Color.glassText)
-                        VStack(alignment: .leading) {
-                            Text("Smart Search")
-                                .font(.heading)
-                                .foregroundStyle(Color.glassText)
-                            Text("Get AI Curated listings. Just for you.")
-                                .font(.subheading)
-                                .foregroundStyle(Color.glassText)
+        ZStack(alignment: .top) {
+            VStack {
+                ScrollView {
+                    VStack {
+                        Spacer().frame(height: Screen.padding)
+                        ForEach(0..<100) { index in
+                            Text("hi \(index)")
                         }
-                        Spacer()
-                    }.padding(.horizontal, Screen.padding)
-                }.frame(height: 64)
-                    .frame(maxWidth: .infinity)
-                    .background()
-            }
-        }
+                    }.frame(maxWidth: .infinity)
+                }
+                Spacer().frame(height: screen.safeAreaInsets.bottom + Screen.padding * 3)
+            }.padding(.top, 64)
+            SearchBar(isEditing: true)
+        }.frame(maxHeight: .infinity)
+            .background(Color.background)
     }
 }
 

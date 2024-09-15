@@ -26,7 +26,7 @@ struct GlassSearchBarPointer: View {
                         Text("Smart Search")
                             .font(.heading)
                             .foregroundStyle(Color.glassText)
-                        Text("Get AI Curated listings. Just for you.")
+                        Text("Get AI curated listings. Just for you.")
                             .font(.subheading)
                             .foregroundStyle(Color.glassText)
                     }

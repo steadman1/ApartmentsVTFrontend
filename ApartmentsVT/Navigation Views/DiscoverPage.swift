@@ -21,12 +21,12 @@ struct DiscoverPage: View {
                 VStack(spacing: Screen.padding * 2) {
                     RecommendedListings(type: .nearCampus)
                     RecommendedListings(type: .nearGroceries)
-                    Spacer().frame(height: Screen.padding * 2)
+                    Spacer().frame(height: screen.safeAreaInsets.bottom + Screen.padding * 3)
                 }.padding(.top, discoverTopBarHeight + topInset - Screen.padding * 2)
                     .frame(maxWidth: .infinity)
             }
             DiscoverTopBar(topInset: topInset, height: discoverTopBarHeight)
-        }.frame(height: screen.height)
+        }.frame(maxHeight: .infinity)
             .background(Color.background)
             .ignoresSafeArea()
     }
