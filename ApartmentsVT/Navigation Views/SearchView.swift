@@ -46,5 +46,7 @@ struct SearchView: View {
             .background(Color.background)
             .ignoresSafeArea(.all, edges: .bottom)
     }
+    
+    
 }
 

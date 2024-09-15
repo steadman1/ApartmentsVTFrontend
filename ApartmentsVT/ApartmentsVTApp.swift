@@ -117,6 +117,7 @@ extension ApartmentsVTApp {
                                         print("Tokens refreshed successfully.")
                                     }
                                 } else {
+                                    print(jsonResponse)
                                     print("Error: Invalid response format.")
                                 }
                             }

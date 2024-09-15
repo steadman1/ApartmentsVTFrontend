@@ -72,6 +72,18 @@ struct SearchBar: View {
                         }
                         Spacer()
                         Button {
+                            searchListings(searchQuery: searchQuery) { retrievedListings, error in
+                                print(retrievedListings)
+                                if let error = error {
+                                    print("Error searching listings: \(error)")
+                                } else if let retrievedListings = retrievedListings {
+                                    print("Found \(retrievedListings.count) listings:")
+                                    for listing in retrievedListings {
+                                        print("Title: \(listing.title), Price: \(listing.price)")
+                                        listings = retrievedListings
+                                    }
+                                }
+                            }
                             isLoading.toggle()
                         } label: {
                                 ZStack {
@@ -112,6 +124,85 @@ struct SearchBar: View {
             }
             withAnimation(.navigationItemBounce) { textFieldFocusAnimator = newValue }
         }
+    }
+    
+    func searchListings(searchQuery: String, completion: @escaping ([Listing]?, Error?) -> Void) {
+        // Base URL from ObservableDefaults
+        guard let host = ObservableDefaults.shared.host else {
+            print("Host URL not available")
+            completion(nil, NSError(domain: "HostUnavailable", code: 1, userInfo: [NSLocalizedDescriptionKey: "Host URL is not available"]))
+            return
+        }
+        
+        // Construct the search URL
+        guard let url = URL(string: "\(host)/search/ai") else {
+            print("Invalid URL")
+            completion(nil, NSError(domain: "InvalidURL", code: 2, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))
+            return
+        }
+        
+        // Create the request
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Prepare the JSON body with the search query
+        let body: [String: Any] = [
+            "prompt": searchQuery
+        ]
+        
+        // Encode the body as JSON
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+        } catch {
+            print("Error encoding JSON: \(error.localizedDescription)")
+            completion(nil, error)
+            return
+        }
+        
+        // Create the data task to send the request
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            // Handle error
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                completion(nil, error)
+                return
+            }
+            
+            // Handle response
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Status Code: \(httpResponse.statusCode)")
+                
+                // Check if the status code indicates success (200 OK)
+                if httpResponse.statusCode == 200 {
+                    // Handle the response data
+                    if let data = data {
+                        do {
+                            print(String(data: data, encoding: .utf8))
+                            // Decode the JSON response to the ListingsResponse model
+                            let listingsResponse = try JSONDecoder().decode(ListingsResponse.self, from: data)
+                            
+                            if listingsResponse.success {
+                                completion(listingsResponse.listings, nil)
+                            } else {
+                                let error = NSError(domain: "SearchFailed", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Search failed. Success flag is false."])
+                                completion(nil, error)
+                            }
+                        } catch {
+                            print("Error decoding response: \(error.localizedDescription)")
+                            completion(nil, error)
+                        }
+                    }
+                } else {
+                    print("Search failed with status code: \(httpResponse.statusCode)")
+                    let error = NSError(domain: "SearchFailed", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Search failed with status code: \(httpResponse.statusCode)"])
+                    completion(nil, error)
+                }
+            }
+        }
+        
+        // Start the data task
+        task.resume()
     }
 }
 

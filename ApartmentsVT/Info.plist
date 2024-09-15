@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BackendHostName</key>
-	<string>https://vtapts.turkflix.live</string>
+	<string>http://172.29.240.247:5000</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Manrope.ttf</string>
