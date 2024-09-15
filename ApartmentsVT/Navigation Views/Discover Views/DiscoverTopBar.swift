@@ -50,16 +50,16 @@ struct DiscoverTopBar: View {
                     UserProfileContainer(user: User.sampleUser)
                 }
                 
-                Spacer()
-                
-                VStack(alignment: .leading) {
-                    Text("Discover Listings")
-                        .font(.title)
-                        .foregroundStyle(Color.glassText)
-                    Text("Find your perfect property.")
-                        .font(.subtitle)
-                        .foregroundStyle(Color.glassText)
-                }
+//                Spacer()
+//                
+//                VStack(alignment: .leading) {
+//                    Text("Discover Listings")
+//                        .font(.title)
+//                        .foregroundStyle(Color.glassText)
+//                    Text("Find your perfect property.")
+//                        .font(.subtitle)
+//                        .foregroundStyle(Color.glassText)
+//                }
                 
                 Spacer()
                 

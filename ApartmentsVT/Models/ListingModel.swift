@@ -23,6 +23,7 @@ class Listing: Codable {
     var propertyType: String
     var latitude: Float
     var longitude: Float
+    var milesToCampus: Int
     var walkTime: Int
     var bikeTime: Int
     var busRoutesCount: Int
@@ -62,6 +63,7 @@ class Listing: Codable {
          propertyType: String,
          latitude: Float,
          longitude: Float,
+         milesToCampus: Int,
          walkTime: Int,
          bikeTime: Int,
          busRoutesCount: Int,
@@ -167,6 +169,7 @@ class Listing: Codable {
             propertyType: "Apartment",
             latitude: 37.227,
             longitude: -80.422,
+            milesToCampus: 2,
             walkTime: 15,
             bikeTime: 8,
             busRoutesCount: 3,
@@ -206,7 +209,8 @@ class Listing: Codable {
             presentPetTypes: ["Cat"],
             propertyType: "House",
             latitude: 37.229,
-            longitude: -80.421,
+            longitude: -80.421, 
+            milesToCampus: 3,
             walkTime: 20,
             bikeTime: 10,
             busRoutesCount: 2,
@@ -249,7 +253,8 @@ class Listing: Codable {
             presentPetTypes: [],
             propertyType: "Apartment",
             latitude: 37.235,
-            longitude: -80.430,
+            longitude: -80.430, 
+            milesToCampus: 5,
             walkTime: 10,
             bikeTime: 5,
             busRoutesCount: 1,

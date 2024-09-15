@@ -16,7 +16,6 @@ class User: Codable {
     var lastName: String
     var email: String
     var phoneNumber: String
-    var password: String
     var bio: String?
     var nationality: String?
     var profilePictureURL: URL?
@@ -29,7 +28,6 @@ class User: Codable {
          lastName: String,
          email: String,
          phoneNumber: String,
-         password: String,
          bio: String? = nil,
          nationality: String? = nil,
          profilePictureURL: URL? = nil,
@@ -41,7 +39,6 @@ class User: Codable {
         self.lastName = lastName
         self.email = email
         self.phoneNumber = phoneNumber
-        self.password = password
         self.bio = bio
         self.nationality = nationality
         self.profilePictureURL = profilePictureURL
@@ -80,7 +77,6 @@ class User: Codable {
         lastName: "Doe",
         email: "john.doe@example.com",
         phoneNumber: "555-1234",
-        password: "securepassword123",
         bio: "I am a student at VT, and I love tech and real estate.",
         nationality: "American",
         profilePictureURL: URL(string: "https://i.scdn.co/image/ab67757000003b822342efa65059b2f606d0ee03"),

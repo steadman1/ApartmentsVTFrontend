@@ -10,31 +10,45 @@ import SwiftUI
 import SteadmanUI
 
 struct ComplianceType {
+    enum Compliance {
+        case ada, pets, smoking, parking
+    }
+    
+    let enumeration: Compliance
     let title: String
+    let icon: String
     private let compliant: String
     private let notCompliant: String
     
     // Static instances for each compliance type
     static let ada = ComplianceType(
+        enumeration: .ada,
         title: "ADA Compliance",
+        icon: "staroflife.fill",
         compliant: "This property is accessible for individuals with disabilities.",
         notCompliant: "This property is not accessible for individuals with disabilities."
     )
     
     static let pets = ComplianceType(
+        enumeration: .pets,
         title: "Pets Allowed",
+        icon: "pawprint.fill",
         compliant: "This property allows pets.",
         notCompliant: "This property does not allow pets."
     )
     
     static let parking = ComplianceType(
+        enumeration: .parking,
         title: "Parking Available",
+        icon: "car.fill",
         compliant: "This property has parking available.",
         notCompliant: "This property does not have parking available."
     )
     
     static let smoking = ComplianceType(
+        enumeration: .smoking,
         title: "Smoking Allowed",
+        icon: "smoke.fill",
         compliant: "This property allows smoking.",
         notCompliant: "This property does not allow smoking."
     )
@@ -49,30 +63,72 @@ struct ComplianceType {
     ]
 }
 
+enum UIDesignType {
+    case glass, outline
+}
 
 struct ComplianceButton: View {
-    
+    @State private var showAlert = false // State to control the alert
+    let uiDesignType: UIDesignType
     let complianceType: ComplianceType
     let listing: Listing
     
-    var value = false
-    
     var body: some View {
-        Button {
-            
-            print("bookmark")
+        var value = false
+        switch complianceType.enumeration {
+        case .ada:
+            value = listing.adaAccessible
+        case .pets:
+            value = listing.petsAllowed
+        case .smoking:
+            value = listing.smokingAllowed
+        case .parking:
+            value = listing.parkingAvailable
+        }
+        
+        return Button {
+            showAlert = true // Trigger the alert
         } label: {
-            ZStack {
-                Image(.bookmark)
-                    .resizable()
-                    .frame(width: 24, height: 24)
-                    .foregroundStyle(Color.glassText)
-                
-            }.frame(width: 40, height: 40)
-                .glassEffect()
+            ZStack(alignment: .bottomTrailing) {
+                switch uiDesignType {
+                case .glass:
+                    ZStack {
+                        Image(systemName: complianceType.icon)
+                            .font(.subheadingIcon)
+                            .foregroundStyle(Color.glassText)
+                        
+                    }.frame(width: 40, height: 40)
+                        .glassEffect()
+                case .outline:
+                    ZStack {
+                        Image(systemName: complianceType.icon)
+                            .font(.subheadingIcon)
+                            .foregroundStyle(Color.primaryText)
+                        
+                    }.frame(width: 40, height: 40)
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle().stroke(Color.primaryText, lineWidth: 2)
+                        )
+                }
+                Circle()
+                    .frame(width: 14, height: 14)
+                    .foregroundStyle(value ? .successLight : .failureLight)
+                    .overlay(
+                        Circle().stroke(value ? .successHeavy : .failureHeavy, lineWidth: 2)
+                    )
+            }
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text(complianceType.title),
+                message: Text(complianceType.getInfo(value)),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
 }
+
 
 struct ListingCard: View {
     @EnvironmentObject var defaults: ObservableDefaults
@@ -141,8 +197,11 @@ struct ListingCard: View {
             VStack {
                 HStack(spacing: Screen.halfPadding) {
                     ForEach(ComplianceType.allComplianceTypes, id: \.title) { compliance in
-                        
-                        ComplianceButton(complianceType: compliance, listing: listing)
+                        ComplianceButton(
+                            uiDesignType: .glass,
+                            complianceType: compliance,
+                            listing: listing
+                        )
                     }
                 }
                 Spacer()

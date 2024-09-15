@@ -12,7 +12,7 @@ import SteadmanUI
 struct DiscoverPage: View {
     @EnvironmentObject var screen: Screen
     
-    let discoverTopBarHeight: CGFloat = 260
+    let discoverTopBarHeight: CGFloat = 160
     
     var body: some View {
         let topInset: CGFloat = screen.safeAreaInsets.top + Screen.padding * 3
