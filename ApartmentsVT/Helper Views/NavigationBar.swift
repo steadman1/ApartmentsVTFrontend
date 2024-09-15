@@ -136,23 +136,25 @@ public struct CustomNavigationBar<Content: View>: View {
                 }
             }
 
-            ZStack {
-                HStack {
-                    ForEach(Array(zip(items.indices, items)), id: \.0) { index, item in
-                        item.environment(\.index, index)
-                            .environment(\.itemCount, items.count)
-                        
-                        if (index < items.count - 1) {
-                            Spacer()
+            VStack {
+                ZStack {
+                    HStack {
+                        ForEach(Array(zip(items.indices, items)), id: \.0) { index, item in
+                            item.environment(\.index, index)
+                                .environment(\.itemCount, items.count)
+                            
+                            if (index < items.count - 1) {
+                                Spacer()
+                            }
                         }
-                    }
-                }.padding(.horizontal, Screen.padding)
-                    .padding(.top, NavigationBar.topPadding)
-            }.frame(width: screen.width - Screen.padding * 2, height: NavigationBar.height)
-                .background(Color.navigationBackground)
-                .clipShape(RoundedRectangle(cornerRadius: 100))
-                .padding(.top, (NavigationBar.height - NavigationBar.itemHeight) / -2)
-                .position(x: screen.halfWidth, y: screen.height - NavigationBar.halfHeight + screen.safeAreaInsets.bottom)
+                    }.padding(.horizontal, Screen.padding)
+                        .padding(.top, NavigationBar.topPadding)
+                }.frame(width: screen.width - Screen.padding * 2, height: NavigationBar.height)
+                    .background(Color.navigationBackground)
+                    .clipShape(RoundedRectangle(cornerRadius: 100))
+                    .padding(.top, (NavigationBar.height - NavigationBar.itemHeight) / -2)
+                    .position(x: screen.halfWidth, y: screen.height - NavigationBar.halfHeight + screen.safeAreaInsets.bottom)
+            }
             
         }.onAppear {
             bar.isShowing = true

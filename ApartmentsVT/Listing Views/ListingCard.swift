@@ -134,6 +134,8 @@ struct ListingCard: View {
     @EnvironmentObject var defaults: ObservableDefaults
     @EnvironmentObject var screen: Screen
     
+    @State private var isShowingListingPage = false
+    
     let listing: Listing
     
     init(_ listing: Listing) {
@@ -142,41 +144,75 @@ struct ListingCard: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            // Background AsyncImage with Gradient
-            if let imageURL = listing.imagesURLs.first {
-                AsyncImage(url: imageURL) { phase in
-                    switch phase {
-                    case .empty:
-                        // Placeholder while image loads
-                        Color.gray
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 296, height: 348)
-                            .overlay(
-                                LinearGradient(
-                                    gradient: Gradient(stops: [
-                                        .init(color: Color.darkGradient, location: 0), // Bottom
-                                        .init(color: Color.black.opacity(0.0), location: 0.75) // Middle
-                                    ]),
-                                    startPoint: .bottom,
-                                    endPoint: .center
+            ZStack {
+                // Background AsyncImage with Gradient
+                if let imageURL = listing.imagesURLs.first {
+                    AsyncImage(url: imageURL) { phase in
+                        switch phase {
+                        case .empty:
+                            // Placeholder while image loads
+                            Color.gray
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 296, height: 348)
+                                .overlay(
+                                    LinearGradient(
+                                        gradient: Gradient(stops: [
+                                            .init(color: Color.darkGradient, location: 0), // Bottom
+                                            .init(color: Color.black.opacity(0.0), location: 0.75) // Middle
+                                        ]),
+                                        startPoint: .bottom,
+                                        endPoint: .center
+                                    )
                                 )
-                            )
-                            .clipped()
-                    case .failure:
-                        // Fallback for loading failure
-                        Color.gray
-                    @unknown default:
-                        EmptyView()
+                                .clipped()
+                        case .failure:
+                            // Fallback for loading failure
+                            Image(.burrusHall)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 296, height: 348)
+                                .overlay(
+                                    LinearGradient(
+                                        gradient: Gradient(stops: [
+                                            .init(color: Color.darkGradient, location: 0), // Bottom
+                                            .init(color: Color.black.opacity(0.0), location: 0.75) // Middle
+                                        ]),
+                                        startPoint: .bottom,
+                                        endPoint: .center
+                                    )
+                                )
+                                .clipped()
+                        @unknown default:
+                            EmptyView()
+                        }
                     }
+                    .frame(width: 296, height: 348) // Ensure image takes the correct size
+                } else {
+                    // Fallback if no image is available
+                    Image(.burrusHall)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 296, height: 348)
+                        .overlay(
+                            LinearGradient(
+                                gradient: Gradient(stops: [
+                                    .init(color: Color.darkGradient, location: 0), // Bottom
+                                    .init(color: Color.black.opacity(0.0), location: 0.75) // Middle
+                                ]),
+                                startPoint: .bottom,
+                                endPoint: .center
+                            )
+                        )
+                        .clipped()
                 }
-                .frame(width: 296, height: 348) // Ensure image takes the correct size
-            } else {
-                // Fallback if no image is available
-                Color.gray.frame(width: 296, height: 348)
-            }
+            }.onTapGesture {
+                    isShowingListingPage = true
+                }.navigationDestination(isPresented: $isShowingListingPage) {
+                    ListingPage(listing: listing).environmentObject(screen)
+                }
             
             
             Button {

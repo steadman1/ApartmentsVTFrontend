@@ -13,7 +13,7 @@ struct ProfilePage: View {
     
     var body: some View {
         VStack {
-            
+
         }.onAppear {
             login(email: "steadman@vt.edu", password: "12345") { accessToken, refreshToken, error in
                 if let error = error {

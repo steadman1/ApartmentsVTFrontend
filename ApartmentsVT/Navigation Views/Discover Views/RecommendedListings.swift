@@ -10,10 +10,17 @@ struct RecommendedListingType {
         title: "Near Campus",
         info: "Properties within 3 miles of your campus."
     )
-    
     static let nearGroceries: RecommendedListingType = RecommendedListingType(
         title: "Near Groceries",
         info: "Properties within 3 miles of at least one grocery store."
+    )
+    static let busRoutes: RecommendedListingType = RecommendedListingType(
+        title: "Along Bus Routes",
+        info: "Properties with at least one bus route."
+    )
+    static let withoutPets: RecommendedListingType = RecommendedListingType(
+        title: "Without Pets",
+        info: "Properties without pets. Properties may still be pet friendly."
     )
 }
 
@@ -21,7 +28,7 @@ struct RecommendedListings: View {
     @EnvironmentObject var defaults: ObservableDefaults
     @EnvironmentObject var screen: Screen
     
-    @State var listings: [Listing] = Listing.sampleListings
+    @Binding var listings: [Listing]
     
     let type: RecommendedListingType
     @State private var showAlert = false // State variable to control alert presentation
@@ -59,6 +66,7 @@ struct RecommendedListings: View {
                     HStack(spacing: 2) {
                         Text("See More")
                             .font(.detail)
+                            .fontWeight(.bold)
                             .foregroundStyle(Color.primaryText)
                         Image(systemName: "arrow.up.forward")
                             .font(.detailIcon)

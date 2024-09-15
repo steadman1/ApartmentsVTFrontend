@@ -34,6 +34,20 @@
 		0893D88F2C96645800D17809 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D88E2C96645800D17809 /* SearchBar.swift */; };
 		0893D8912C96666A00D17809 /* DismissingKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8902C96666A00D17809 /* DismissingKeyboardButton.swift */; };
 		0893D8932C966A7100D17809 /* OutlineShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8922C966A7100D17809 /* OutlineShape.swift */; };
+		0893D8962C96B22E00D17809 /* ListingImageTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8952C96B22E00D17809 /* ListingImageTitle.swift */; };
+		0893D8982C96B27300D17809 /* ListingBasicDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8972C96B27300D17809 /* ListingBasicDetails.swift */; };
+		0893D89A2C96B29300D17809 /* ListingGetToKnowApartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8992C96B29300D17809 /* ListingGetToKnowApartment.swift */; };
+		0893D89C2C96B2A500D17809 /* ListingApartmentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D89B2C96B2A500D17809 /* ListingApartmentDetails.swift */; };
+		0893D89E2C96B2B500D17809 /* ListingMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D89D2C96B2B500D17809 /* ListingMaps.swift */; };
+		0893D8A02C96B2C400D17809 /* ListingRoommateDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D89F2C96B2C400D17809 /* ListingRoommateDetails.swift */; };
+		0893D8A22C96B2D700D17809 /* ListingComplianceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8A12C96B2D700D17809 /* ListingComplianceDetails.swift */; };
+		0893D8A42C96C65D00D17809 /* ListingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8A32C96C65D00D17809 /* ListingMapView.swift */; };
+		0893D8A92C96D54F00D17809 /* CreateListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8A82C96D54F00D17809 /* CreateListing.swift */; };
+		0893D8AB2C96D67600D17809 /* CreateListingBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8AA2C96D67600D17809 /* CreateListingBasicInfo.swift */; };
+		0893D8AD2C96DC7500D17809 /* CreateListingAptSpecifics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8AC2C96DC7500D17809 /* CreateListingAptSpecifics.swift */; };
+		0893D8AF2C96DD2E00D17809 /* CreateListingCompliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8AE2C96DD2E00D17809 /* CreateListingCompliance.swift */; };
+		0893D8B12C96DD4E00D17809 /* CreateListingRoommates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8B02C96DD4E00D17809 /* CreateListingRoommates.swift */; };
+		0893D8B32C96DE5900D17809 /* CreateListingFinances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893D8B22C96DE5900D17809 /* CreateListingFinances.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +79,20 @@
 		0893D88E2C96645800D17809 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		0893D8902C96666A00D17809 /* DismissingKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardButton.swift; sourceTree = "<group>"; };
 		0893D8922C966A7100D17809 /* OutlineShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineShape.swift; sourceTree = "<group>"; };
+		0893D8952C96B22E00D17809 /* ListingImageTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingImageTitle.swift; sourceTree = "<group>"; };
+		0893D8972C96B27300D17809 /* ListingBasicDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingBasicDetails.swift; sourceTree = "<group>"; };
+		0893D8992C96B29300D17809 /* ListingGetToKnowApartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGetToKnowApartment.swift; sourceTree = "<group>"; };
+		0893D89B2C96B2A500D17809 /* ListingApartmentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingApartmentDetails.swift; sourceTree = "<group>"; };
+		0893D89D2C96B2B500D17809 /* ListingMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingMaps.swift; sourceTree = "<group>"; };
+		0893D89F2C96B2C400D17809 /* ListingRoommateDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRoommateDetails.swift; sourceTree = "<group>"; };
+		0893D8A12C96B2D700D17809 /* ListingComplianceDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingComplianceDetails.swift; sourceTree = "<group>"; };
+		0893D8A32C96C65D00D17809 /* ListingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingMapView.swift; sourceTree = "<group>"; };
+		0893D8A82C96D54F00D17809 /* CreateListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListing.swift; sourceTree = "<group>"; };
+		0893D8AA2C96D67600D17809 /* CreateListingBasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingBasicInfo.swift; sourceTree = "<group>"; };
+		0893D8AC2C96DC7500D17809 /* CreateListingAptSpecifics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingAptSpecifics.swift; sourceTree = "<group>"; };
+		0893D8AE2C96DD2E00D17809 /* CreateListingCompliance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingCompliance.swift; sourceTree = "<group>"; };
+		0893D8B02C96DD4E00D17809 /* CreateListingRoommates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingRoommates.swift; sourceTree = "<group>"; };
+		0893D8B22C96DE5900D17809 /* CreateListingFinances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListingFinances.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				0893D8822C963CC100D17809 /* Models */,
+				0893D8A72C96D54000D17809 /* Create Listing Views */,
 				0893D87B2C9639CA00D17809 /* Listing Views */,
 				0893D8752C962A2900D17809 /* Info.plist */,
 				0893D8702C9629D000D17809 /* Fonts */,
@@ -180,6 +209,8 @@
 				0893D87C2C9639D400D17809 /* ListingInline.swift */,
 				0893D87E2C9639E300D17809 /* ListingCard.swift */,
 				0893D8802C9639EB00D17809 /* ListingPage.swift */,
+				0893D8942C96B21B00D17809 /* Listing Page Views */,
+				0893D8A32C96C65D00D17809 /* ListingMapView.swift */,
 			);
 			path = "Listing Views";
 			sourceTree = "<group>";
@@ -199,6 +230,33 @@
 				0893D88E2C96645800D17809 /* SearchBar.swift */,
 			);
 			path = "Search Views";
+			sourceTree = "<group>";
+		};
+		0893D8942C96B21B00D17809 /* Listing Page Views */ = {
+			isa = PBXGroup;
+			children = (
+				0893D8952C96B22E00D17809 /* ListingImageTitle.swift */,
+				0893D8972C96B27300D17809 /* ListingBasicDetails.swift */,
+				0893D8992C96B29300D17809 /* ListingGetToKnowApartment.swift */,
+				0893D89B2C96B2A500D17809 /* ListingApartmentDetails.swift */,
+				0893D89D2C96B2B500D17809 /* ListingMaps.swift */,
+				0893D89F2C96B2C400D17809 /* ListingRoommateDetails.swift */,
+				0893D8A12C96B2D700D17809 /* ListingComplianceDetails.swift */,
+			);
+			path = "Listing Page Views";
+			sourceTree = "<group>";
+		};
+		0893D8A72C96D54000D17809 /* Create Listing Views */ = {
+			isa = PBXGroup;
+			children = (
+				0893D8A82C96D54F00D17809 /* CreateListing.swift */,
+				0893D8AA2C96D67600D17809 /* CreateListingBasicInfo.swift */,
+				0893D8AC2C96DC7500D17809 /* CreateListingAptSpecifics.swift */,
+				0893D8AE2C96DD2E00D17809 /* CreateListingCompliance.swift */,
+				0893D8B02C96DD4E00D17809 /* CreateListingRoommates.swift */,
+				0893D8B22C96DE5900D17809 /* CreateListingFinances.swift */,
+			);
+			path = "Create Listing Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,27 +337,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0893D89C2C96B2A500D17809 /* ListingApartmentDetails.swift in Sources */,
 				0886F84B2C96269A00867834 /* ObservableDefaults.swift in Sources */,
+				0893D8AD2C96DC7500D17809 /* CreateListingAptSpecifics.swift in Sources */,
 				0893D86D2C96295900D17809 /* Extensions.swift in Sources */,
 				0893D8782C96397300D17809 /* DiscoverTopBar.swift in Sources */,
+				0893D8A42C96C65D00D17809 /* ListingMapView.swift in Sources */,
 				0893D87F2C9639E300D17809 /* ListingCard.swift in Sources */,
 				0893D87D2C9639D400D17809 /* ListingInline.swift in Sources */,
+				0893D8B32C96DE5900D17809 /* CreateListingFinances.swift in Sources */,
 				0886F8432C96261000867834 /* DiscoverPage.swift in Sources */,
 				0893D8932C966A7100D17809 /* OutlineShape.swift in Sources */,
 				0886F8472C96262500867834 /* MessagesPage.swift in Sources */,
+				0893D8AF2C96DD2E00D17809 /* CreateListingCompliance.swift in Sources */,
 				0893D88C2C9647FD00D17809 /* UserProfileContainer.swift in Sources */,
 				0886F82F2C95C66700867834 /* ContentView.swift in Sources */,
 				0886F8492C96263500867834 /* ProfilePage.swift in Sources */,
 				0893D8842C963CCB00D17809 /* ListingModel.swift in Sources */,
 				0893D8862C963CDC00D17809 /* UserModel.swift in Sources */,
 				0886F82D2C95C66700867834 /* ApartmentsVTApp.swift in Sources */,
+				0893D8A22C96B2D700D17809 /* ListingComplianceDetails.swift in Sources */,
+				0893D8A02C96B2C400D17809 /* ListingRoommateDetails.swift in Sources */,
 				0893D87A2C9639B200D17809 /* RecommendedListings.swift in Sources */,
+				0893D8AB2C96D67600D17809 /* CreateListingBasicInfo.swift in Sources */,
 				0886F83D2C96235C00867834 /* NavigationBar.swift in Sources */,
 				0886F8452C96261F00867834 /* SearchView.swift in Sources */,
 				0893D8882C9640D000D17809 /* GlassSearchBarPointer.swift in Sources */,
 				0893D88F2C96645800D17809 /* SearchBar.swift in Sources */,
 				0893D88A2C96430500D17809 /* GlassShape.swift in Sources */,
+				0893D8962C96B22E00D17809 /* ListingImageTitle.swift in Sources */,
+				0893D8A92C96D54F00D17809 /* CreateListing.swift in Sources */,
+				0893D89A2C96B29300D17809 /* ListingGetToKnowApartment.swift in Sources */,
 				0893D8812C9639EB00D17809 /* ListingPage.swift in Sources */,
+				0893D8B12C96DD4E00D17809 /* CreateListingRoommates.swift in Sources */,
+				0893D8982C96B27300D17809 /* ListingBasicDetails.swift in Sources */,
+				0893D89E2C96B2B500D17809 /* ListingMaps.swift in Sources */,
 				0893D8912C96666A00D17809 /* DismissingKeyboardButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

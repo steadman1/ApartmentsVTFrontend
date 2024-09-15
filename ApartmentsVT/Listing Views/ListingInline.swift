@@ -13,6 +13,8 @@ struct ListingInline: View {
     @EnvironmentObject var defaults: ObservableDefaults
     @EnvironmentObject var screen: Screen
     
+    @State private var isShowingListingPage = false
+    
     let listing: Listing
     
     init(_ listing: Listing) {
@@ -51,7 +53,21 @@ struct ListingInline: View {
                                     .clipped()
                             case .failure:
                                 // Fallback for loading failure
-                                Color.gray
+                                Image(.burrusHall)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: width, height: height)
+                                    .overlay(
+                                        LinearGradient(
+                                            gradient: Gradient(stops: [
+                                                .init(color: Color.darkGradient, location: 0), // Bottom
+                                                .init(color: Color.black.opacity(0.0), location: 0.75) // Middle
+                                            ]),
+                                            startPoint: .bottom,
+                                            endPoint: .center
+                                        )
+                                    )
+                                    .clipped()
                             @unknown default:
                                 EmptyView()
                             }
@@ -59,7 +75,21 @@ struct ListingInline: View {
                         .frame(width: width, height: height) // Ensure image takes the correct size
                     } else {
                         // Fallback if no image is available
-                        Color.gray.frame(width: width, height: height)
+                        Image(.burrusHall)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: width, height: height)
+                            .overlay(
+                                LinearGradient(
+                                    gradient: Gradient(stops: [
+                                        .init(color: Color.darkGradient, location: 0), // Bottom
+                                        .init(color: Color.black.opacity(0.0), location: 0.75) // Middle
+                                    ]),
+                                    startPoint: .bottom,
+                                    endPoint: .center
+                                )
+                            )
+                            .clipped()
                     }
                 }.cornerRadius(16, corners: .allCorners)
                 
@@ -111,6 +141,12 @@ struct ListingInline: View {
             .frame(height: height + Screen.padding)
             .background(.middleground)
             .cornerRadius(24, corners: .allCorners)
+            .onTapGesture {
+                isShowingListingPage = true
+            }
+            .navigationDestination(isPresented: $isShowingListingPage) {
+                ListingPage(listing: listing).environmentObject(screen)
+            }
         
     }
 }

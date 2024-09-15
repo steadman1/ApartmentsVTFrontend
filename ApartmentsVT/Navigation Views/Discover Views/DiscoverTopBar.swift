@@ -13,6 +13,8 @@ struct DiscoverTopBar: View {
     @EnvironmentObject var defaults: ObservableDefaults
     @EnvironmentObject var screen: Screen
     
+    @State var isCreatingListing = false
+    
     let topInset: CGFloat
     let height: CGFloat
     
@@ -47,7 +49,12 @@ struct DiscoverTopBar: View {
                     
                     Spacer()
                     
-                    UserProfileContainer(user: User.sampleUser)
+                    Button {
+                        isCreatingListing.toggle()
+                    } label: {
+                        UserProfileContainer(user: User.sampleUser)
+                    }
+
                 }
                 
 //                Spacer()
@@ -69,5 +76,8 @@ struct DiscoverTopBar: View {
                 .padding(.top, topInset)
         }.cornerRadius(40, corners: [.bottomLeft, .bottomRight])
             .frame(height: height)
+            .fullScreenCover(isPresented: $isCreatingListing) {
+                CreateListing().environmentObject(screen)
+            }
     }
 }

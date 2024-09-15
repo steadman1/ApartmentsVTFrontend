@@ -61,7 +61,7 @@ struct SearchBar: View {
                     HStack {
                         if (!searchQuery.isEmpty) {
                             ZStack {
-                                Text("Submit to show results for \(searchQuery)")
+                                Text("Submit to show results for \"\(searchQuery)\"")
                                     .font(.detail)
                                     .foregroundStyle(Color.primaryText)
                             }.padding(.vertical, Screen.halfPadding + 1.5)
@@ -73,16 +73,13 @@ struct SearchBar: View {
                         Spacer()
                         Button {
                             searchListings(searchQuery: searchQuery) { retrievedListings, error in
-                                print(retrievedListings)
                                 if let error = error {
                                     print("Error searching listings: \(error)")
                                 } else if let retrievedListings = retrievedListings {
                                     print("Found \(retrievedListings.count) listings:")
-                                    for listing in retrievedListings {
-                                        print("Title: \(listing.title), Price: \(listing.price)")
-                                        listings = retrievedListings
-                                    }
+                                    listings = retrievedListings
                                 }
+                                isLoading = false
                             }
                             isLoading.toggle()
                         } label: {

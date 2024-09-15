@@ -29,19 +29,22 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        CustomNavigationBar(items: navigationItems) {
-            DiscoverPage()
-                .frame(maxWidth: screen.width)
-            SearchView()
-                .frame(maxWidth: screen.width)
-            MessagesPage()
-                .frame(maxWidth: screen.width)
-            ProfilePage()
-                .frame(maxWidth: screen.width)
+        NavigationStack {
+            CustomNavigationBar(items: navigationItems) {
+                DiscoverPage()
+                    .frame(maxWidth: screen.width)
+                SearchView()
+                    .frame(maxWidth: screen.width)
+                MessagesPage()
+                    .frame(maxWidth: screen.width)
+                ProfilePage()
+                    .frame(maxWidth: screen.width)
+            }
         }.onAppear {
             guard let infoDictionary: [String: Any] = Bundle.main.infoDictionary else { return }
             guard let backendHostAddress: String = infoDictionary["BackendHostName"] as? String else { return }
             defaults.host = backendHostAddress
+            print(defaults.accessToken)
         }
     }
 }
