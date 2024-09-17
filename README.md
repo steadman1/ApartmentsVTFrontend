@@ -3,7 +3,7 @@
 Frontend for our VT Hacks 2024 project.  
 Find our project's backend on GitHub [here.](https://github.com/steadman1/VTHacks2024)
 
-# Awards
+## Awards
 - 2nd Place for Best Use of Microsoft AI to Enhance the Student Experience of Healthy Food, Public Transit, or Affordable Housing
 
 ## Project Description
