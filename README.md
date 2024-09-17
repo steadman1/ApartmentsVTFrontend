@@ -1,11 +1,16 @@
 # ApartmentsVTFrontend
 
-Frontend for our VT Hacks 2024 project.  
+Frontend for our VTHacks 2024 project.  
 Find our project's backend on [GitHub here.](https://github.com/steadman1/VTHacks2024)
+
+### Team & Contributions
+- Spencer Steadman: Frontend, UI/UX, and REST API interaction handling.
+- Erdem Yilmaz: Backend, SQL Database Management, REST API Construction, Flask Server Development, and Hosting.
+- Alex Sleptsov: Backend, Microsoft Azure x OpenAI API implementation, and Filtering Fuctions.
 
 ### Awards & Recognition
 - 2nd Place for Best Use of Microsoft AI to Enhance the Student Experience of Healthy Food, Public Transit, or Affordable Housing
-- Personally recognized by the Microsoft x Cloudforce team for exceptional frontend UI/UX design within our application.
+- Spencer Steadman was personally recognized by the Microsoft x Cloudforce team for exceptional frontend UI/UX design within our application.
 
 ### Checkout Subleasing VT
 - [View our Subleasing VT's live demo on YouTube!](https://www.youtube.com/watch?v=5c6yHzON0hU)
