@@ -27,6 +27,9 @@ struct DiscoverPage: View {
                 VStack(spacing: Screen.padding * 2) {
                     RecommendedListings(listings: $nearCampus, type: .nearCampus)
 //                    RecommendedListings(listings: $nearGroceries, type: .nearGroceries)
+                    
+                    
+                    
                     RecommendedListings(listings: $busRoutes, type: .busRoutes)
                     RecommendedListings(listings: $withoutPets, type: .withoutPets)
                 }.padding(.top, discoverTopBarHeight + topInset - Screen.padding * 2)
